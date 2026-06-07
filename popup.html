@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agente IA</title>
+    <style>
+      body { margin: 0; font-family: Arial, sans-serif; background: #ffffff; color: #222; }
+      .container { padding: 16px; width: 360px; }
+      .status-card { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-radius: 12px; background: #e8f4ff; border: 1px solid #d0e6ff; margin-bottom: 12px; }
+      .status-label { font-size: 14px; font-weight: 600; color: #1d3f72; }
+      .status-badge { padding: 8px 12px; border-radius: 999px; background: #0b72d8; color: #fff; font-size: 13px; font-weight: 700; }
+      
+      /* Estilos de los botones agregados */
+      .btn-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+      .btn { padding: 10px; font-size: 13px; font-weight: bold; border: none; border-radius: 8px; cursor: pointer; color: white; transition: background 0.2s; }
+      .btn-observe { background-color: #28a745; }
+      .btn-observe:hover { background-color: #218838; }
+      .btn-gemini { background-color: #6f42c1; }
+      .btn-gemini:hover { background-color: #5a34a1; }
+      .btn-auto { background-color: #fd7e14; }
+      .btn-auto:hover { background-color: #e36c09; }
+
+      .terminal { background: #f5f5f5; color: #111; border-radius: 10px; padding: 14px; font-family: 'Courier New', Courier, monospace; font-size: 12px; line-height: 1.45; min-height: 150px; max-height: 250px; overflow-y: auto; border: 1px solid #d1d1d1; }
+      .terminal-header { font-size: 12px; color: #555; margin-bottom: 10px; }
+      .terminal-line { white-space: pre-wrap; word-break: break-all; }
+      .placeholder { color: #777; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="status-card">
+        <div>
+          <div class="status-label">Confianza Progresiva</div>
+          <div id="confidenceDescription">Cargando...</div>
+        </div>
+        <div id="confidenceBadge" class="status-badge">—</div>
+      </div>
+
+      <!-- PANEL DE CONTROL AGREGADO -->
+      <div class="btn-group">
+        <button id="btnObserve" class="btn btn-observe">👁️ 1. Iniciar Observación</button>
+        <button id="btnGemini" class="btn btn-gemini">🧠 2. Analizar con IA</button>
+        <button id="btnAutomate" class="btn btn-auto">🚀 3. Ejecutar Autónomo</button>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-header">Registro de auditoría AI</div>
+        <div id="aiLogOutput" class="terminal-line placeholder">Esperando acciones para mostrar el registro de `ai_log`.</div>
+      </div>
+    </div>
+    <script src="popup.js" defer></script>
+  </body>
+</html>
